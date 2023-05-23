@@ -10,6 +10,7 @@ ha_iot_class: Cloud Push
 ha_codeowners:
   - '@bachya'
   - '@tkdrob'
+  - '@fletcherau'
 ha_platforms:
   - notify
   - sensor
@@ -143,6 +144,7 @@ The following attributes can be placed inside the `data` key of the service call
 | `file`                   |      yes | A file to include with the message; see below.
 | `blocks`                 |      yes | Array of [Slack blocks](https://api.slack.com/messaging/composing/layouts). *NOTE*: if using `blocks`, they are shown **in place of** the `message` (note that the `message` is required nonetheless).
 | `blocks_template`        |      yes | The same as `blocks`, but able to support [templates](https://www.home-assistant.io/docs/configuration/templating).
+| `thread_ts`              |      yes | Sends the message as a reply to the specified parent. This integration does not have the ability to retrieve a `thread_ts` value.
 
 Note that using `file` will ignore all usage of `blocks` and `blocks_template` (as Slack does not support those frameworks in messages that accompany uploaded files).
 
@@ -244,3 +246,11 @@ title: "Reminder"
 data:
   blocks: []
 ```
+
+Send a message as a reply to an existing message. `thread_ts` can be retrieved through scripts that utilise [Bolt](https://slack.dev/bolt-python/concepts) or other Slack libraries.
+
+```yaml
+message: Here's some extra information that doesn't need to clog up the channel!
+target: "#general"
+data:
+  thread_ts: "1684736481.064129"
