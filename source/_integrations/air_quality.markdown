@@ -18,12 +18,12 @@ The platforms cover the following levels (if they are available):
 - The particulate matter 2.5 (<= 2.5 μm) level.
 - The particulate matter 10 (<= 10 μm) level.
 - The Air Quality Index (AQI).
-- The O3 (ozone) level.
+- The O₃ (ozone) level.
 - The CO (carbon monoxide) level.
-- The CO2 (carbon dioxide) level.
-- The SO2 (sulphur dioxide) level.
-- The N2O (nitrogen oxide) level.
+- The CO₂ (carbon dioxide) level.
+- The SO₂ (sulphur dioxide) level.
+- The N₂O (nitrogen oxide) level.
 - The NO (nitrogen monoxide) level.
-- The NO2 (nitrogen dioxide) level.
+- The NO₂ (nitrogen dioxide) level.
 
 {% include integrations/building_block_integration.md %}
